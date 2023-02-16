@@ -19,6 +19,7 @@ class QuoteController extends Controller
     public function index()
     {
         $quotes = Quote::paginate();
+        
 
         return view('quote.index', compact('quotes'))
             ->with('i', (request()->input('page', 1) - 1) * $quotes->perPage());

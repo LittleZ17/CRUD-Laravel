@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::resource('quotes', App\Http\Controllers\QuoteController::class)->middleware('auth');
+Route::resource('quotes', App\Http\Controllers\QuoteController::class);
+// Route::resource('/quotes', App\Http\Controllers\QuoteController::class);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/quotes', [App\Http\Controllers\HomeController::class, 'index'])->name('quotes');
