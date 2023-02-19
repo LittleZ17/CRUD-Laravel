@@ -1,0 +1,77 @@
+@extends('layouts.app')
+
+@section('template_title')
+    Quote
+@endsection
+
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                {{-- SLIDER VA AQUI!! --}}SLIDER AQUI
+                <div class="card">
+                    <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+
+                            <span id="card_title">
+                                {{ __('Quote') }}
+                            </span>
+                            @role('admin')
+                            <div class="float-right">
+                                <a href="{{ route('quotes.create') }}" class="btn btn-primary btn-sm float-right"
+                                    data-placement="left">
+                                    {{ __('Create New') }}
+                                </a>
+                            </div>
+                            @endrole
+                        </div>
+                    </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            @foreach ($quotes as $quote)
+                                <div class="bg-image card shadow-1-strong"
+                                    style="background-image: url({{ $quote->img}}); 
+                                        backdrop-filter: blur(0px);
+                                        background-color: rgba(203,193,209,0.3);}">
+                                    <div class="card-body text-white">
+                                        <h5 class="card-title">{{ $quote->prhase }}</h5>
+                                        <p class="card-text">
+                                            {{ $quote->author }}
+                                        </p>
+                                        <div>
+                                                <form action="....." method="POST">
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                                            class="fa fa-fw fa-trash"></i> Add Favorite</button>
+                                                </form>
+                                            @role('admin')
+                                                <form action="{{ route('quotes.destroy', $quote->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary "
+                                                        href="{{ route('quotes.show', $quote->id) }}"><i
+                                                            class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success"
+                                                        href="{{ route('quotes.edit', $quote->id) }}"><i
+                                                            class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                                            class="fa fa-fw fa-trash"></i> Delete</button>
+                                                </form>
+                                            @endrole
+                                        </div>
+                                    </div>
+                                </div>    
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                {!! $quotes->links() !!}
+            </div>
+        </div>
+    </div>
+@endsection
