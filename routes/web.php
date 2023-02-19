@@ -23,3 +23,7 @@ Route::resource('quotes', App\Http\Controllers\QuoteController::class);
 // Route::resource('/quotes', App\Http\Controllers\QuoteController::class);
 
 // Route::get('/quotes', [App\Http\Controllers\HomeController::class, 'index'])->name('quotes');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
