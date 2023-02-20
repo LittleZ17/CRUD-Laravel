@@ -25,6 +25,15 @@ Auth::routes();
 
 //Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+ Route::get('/dashboard', function () {
+    return view('dashboard');
+   })->middleware(['auth'])->name('dashboard');
+
+Route::get('/admin', function () {
+    return view('admin');
+})->middleware(['auth', 'role:admin'])->name('admin');
+
+
 Route::get('/', function () {
     return view('home');
 });
