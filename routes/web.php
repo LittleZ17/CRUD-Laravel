@@ -30,8 +30,6 @@ Auth::routes();
  Route::put('/quotes/{id}', [QuoteController::class, 'update'])->name('update');
  Route::delete('/quotes/{id}', [QuoteController::class, 'destroy'])->name('destroy');
 
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
