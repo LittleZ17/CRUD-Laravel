@@ -50,12 +50,12 @@
                                                             class="fa fa-fw fa-trash"></i> Add Favorite</button>
                                                 </form>
                                             @role('admin')
-                                                <form action="{{ route('quotes.destroy', $quote->id) }}" method="POST">
+                                                <form action="{{ route('destroy', $quote->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary "
-                                                        href="{{ route('quotes.show', $quote->id) }}"><i
+                                                        href="{{ route('show', $quote->id) }}"><i
                                                             class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success"
-                                                        href="{{ route('quotes.edit', $quote->id) }}"><i
+                                                        href="{{ route('edit', $quote->id) }}"><i
                                                             class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')

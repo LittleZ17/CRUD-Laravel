@@ -12,18 +12,11 @@ use App\Http\Controllers\QuoteController;
 | contains the "web" middleware group. Now create something great!
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
 Auth::routes();
-
-// Route::resource('quotes', App\Http\Controllers\QuoteController::class);
-// Route::resource('/quotes', App\Http\Controllers\QuoteController::class);
 
  Route::get('/quotes', [QuoteController::class , 'index'])->name('quotes');
  Route::get('/quotes/create', [QuoteController::class, 'create'])->name('create');
- Route::post('/quotes', [QuoteController::class, 'store'])->name('store');
+ Route::post('/quotes/store', [QuoteController::class, 'store'])->name('store');
  
  Route::get('/quotes/{id}', [QuoteController::class, 'show'])->name('show');
  Route::get('/quotes/{id}/edit', [QuoteController::class, 'edit'])->name('edit');
@@ -35,7 +28,6 @@ Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
-
 
 // Route::get('/quotes', [App\Http\Controllers\HomeController::class, 'index'])->name('quotes');
 
