@@ -32,11 +32,13 @@ class AuthServiceProvider extends ServiceProvider
         //
         Gate::before(function ($user, $ability) {
             return $user->hasRole('admin') ? true : null;
+
         });
              Permission::create(['name' => 'add favorite']);
              Permission::create(['name' => 'create quotes', 'edit quotes', 'update quotes', 'delete quotes']);
         
              Role::create(['name' => 'register'])->givePermissionTo('add favorite');
              Role::create(['name' => 'admin'])->givePermissionTo('create quotes', 'edit quotes', 'update quotes', 'delete quotes');
+             User::find(1)->assignRole('admin'); 
     }
 }

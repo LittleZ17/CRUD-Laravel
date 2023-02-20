@@ -18,7 +18,6 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
      * @var array<int, string>
      */
     protected $fillable = [
@@ -29,7 +28,6 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for serialization.
-     *
      * @var array<int, string>
      */
     protected $hidden = [

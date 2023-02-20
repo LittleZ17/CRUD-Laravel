@@ -107,3 +107,11 @@ class QuoteController extends Controller
             ->with('success', 'Quote deleted successfully');
     }
 }
+
+if ($user->hasRole('register')) {
+    givePermissionTo('add favorite');
+}
+
+if ($user->can('admin')) {
+    givePermissionTo('create quotes', 'edit quotes', 'update quotes', 'delete quotes');
+}
