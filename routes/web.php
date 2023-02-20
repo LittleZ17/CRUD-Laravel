@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+Auth::routes();
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +20,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-Auth::routes();
+//Auth::routes();
 
-Route::resource('quotes', App\Http\Controllers\QuoteController::class);
+Route::resource('quotes', App\Http\Controllers\QuoteController::class) ->group(function(){
+  Route::get('search', 'searchQuotes');
+
+});
 // Route::resource('/quotes', App\Http\Controllers\QuoteController::class);
 
 // Route::get('/quotes', [App\Http\Controllers\HomeController::class, 'index'])->name('quotes');
+
+
+// Route::middleware(['auth']) ->group(function(){
+//   Route::get('search', 'searchQuotes');
+
+// });
