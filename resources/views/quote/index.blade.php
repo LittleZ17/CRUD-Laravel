@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                {{-- SLIDER VA AQUI!! --}}SLIDER AQUI
+                {{-- SLIDER VA AQUI!! --}}
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -46,8 +46,8 @@
                                         </p>
                                         <div>
                                                 <form action="....." method="POST">
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i
-                                                            class="fa fa-fw fa-trash"></i> Add Favorite</button>
+                                                    <button type="submit" class="btn btn-sm" style="background-color: rgba(90, 168, 151, 1);>
+                                                    <i class="fa fa-fw fa-trash"></i> Añadir a Favoritos</button>
                                                 </form>
                                             @role('admin')
                                                 <form action="{{ route('quotes.destroy', $quote->id) }}" method="POST">
