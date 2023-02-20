@@ -12,9 +12,9 @@ use App\Http\Controllers\QuoteController;
 | contains the "web" middleware group. Now create something great!
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Auth::routes();
 
@@ -30,6 +30,4 @@ Auth::routes();
  Route::put('/quotes/{id}', [QuoteController::class, 'update'])->name('update');
  Route::delete('/quotes/{id}', [QuoteController::class, 'destroy'])->name('destroy');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
