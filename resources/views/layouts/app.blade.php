@@ -36,6 +36,7 @@
                         <ul class="navbar-nav me-auto">
 
                         </ul>
+                        
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
@@ -64,6 +65,17 @@
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+
+                                        <!----- search bar ----->
+                                        <div class="col-md-5 my-auto">
+                                            <form action="{{ url('search')}}" method="GET" role="search">
+                                                <div class="inpout-group">
+                                                   <input type="search" name="search" value="" place-holder="palabra clave" class="form-control">
+                                                </div>
+                                            </form>
+                                            
+
+                                        </div>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
