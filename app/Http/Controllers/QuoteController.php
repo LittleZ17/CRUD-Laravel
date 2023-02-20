@@ -48,7 +48,7 @@ class QuoteController extends Controller
 
         $quote = Quote::create($request->all());
 
-        return redirect()->route('quotes.index')
+        return redirect()->route('quotes')
             ->with('success', 'Quote created successfully.');
     }
 
@@ -104,7 +104,7 @@ class QuoteController extends Controller
     {
         $quote = Quote::find($id)->delete();
 
-        return redirect()->route('quotes.index')
+        return redirect()->route('quotes')
             ->with('success', 'Quote deleted successfully');
     }
 }
