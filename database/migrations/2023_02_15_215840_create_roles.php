@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
+
+
 return new class extends Migration
 {
     /**
@@ -20,6 +22,18 @@ return new class extends Migration
        $role2 = Role::create(['name' => 'register']);
        $user = User::find(1);
        $user->assignRole($role1);
+       $crudPermissions = ['create', 'read', 'update', 'delete'];
+       $adminRole = Role::where('name', 'admin')->first();
+
+       Schema::table('users', function(Blueprint $table){
+        $table->integer('role') ->default('0');
+        //register id=? role colomn for users?
+       });
+
+       foreach ($crudPermissions as $permission) {
+        $permission = Permission::where('name', $permission.' quotes')->first();
+        $adminRole->syncPermissions([$permission]);
+    }
     }
 
     /**
@@ -29,6 +43,10 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('users', function(Blueprint $table){
+            $table->dropcolumn('role') ;
+            //register  role colomn for users?
+           });
 
     }
 };
