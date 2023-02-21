@@ -36,7 +36,7 @@ class AuthServiceProvider extends ServiceProvider
         if (!$permission) {
             Permission::create(['name' => 'add_favorite', 'guard_name' => 'web']);
         }
-        
+        // check the codes!  re-write
         // Role::create(['name' => 'user'])->givePermissionTo('add_favorite');
         // Role::create(['name' => 'admin'])->givePermissionTo('create quotes', 'edit quotes', 'update quotes', 'delete quotes');
         // User::find(1)->assignRole('admin');

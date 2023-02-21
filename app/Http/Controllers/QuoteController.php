@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Quote;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 /**
  * Class QuoteController
@@ -19,9 +20,10 @@ class QuoteController extends Controller
     public function index()
     {
         $quotes = Quote::paginate(5);
-        
+        $user = new user();
 
-        return view('quote.index', compact('quotes'))
+
+        return view('quote.index', compact('quotes', 'user'))
             ->with('i', (request()->input('page', 1) - 1) * $quotes->perPage());
     }
 
@@ -108,10 +110,4 @@ class QuoteController extends Controller
     }
 }
 
-if ($user->hasRole('register')) {
-    givePermissionTo('add favorite');
-}
 
-if ($user->can('admin')) {
-    givePermissionTo('create quotes', 'edit quotes', 'update quotes', 'delete quotes');
-}

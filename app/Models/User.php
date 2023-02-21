@@ -43,4 +43,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    function userRoles (){
+
+        if ($user->hasRole('register')) {
+            givePermissionTo('add_favorite');
+        }
+        
+        if ($user->can('admin')) {
+            givePermissionTo('create quotes', 'edit quotes', 'update quotes', 'delete quotes');
+        }
+
+}
 }
