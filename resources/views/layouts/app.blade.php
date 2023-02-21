@@ -66,6 +66,14 @@
                                     </form>
                                 </div>
                             </li>
+                            <!--------- search bar ---------->
+                            <div class="col-md-5 my-auto">
+                                            <form action="{{ url('search')}}" method="GET" role="search">
+                                                <div class="inpout-group">
+                                                   <input type="search" name="search" value="" place-holder="palabra clave" class="form-control">
+                                                </div>
+                                            </form>
+
                         @endguest
                     </ul>
                 </div>

@@ -14,6 +14,7 @@ use App\Http\Controllers\QuoteController;
 
 Auth::routes();
 
+Route::get('/search', [SearchController::class, 'search'])->name('search');
  Route::get('/quotes', [QuoteController::class , 'index'])->name('quotes');
  Route::get('/quotes/create', [QuoteController::class, 'create'])->name('create');
  Route::post('/quotes/store', [QuoteController::class, 'store'])->name('store');
