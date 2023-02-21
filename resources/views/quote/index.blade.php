@@ -8,10 +8,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                {{-- SLIDER VA AQUI!! --}}SLIDER AQUI
+                {{-- SLIDER VA AQUI!! --}}
                 <div class="card">
                     <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin:10px">
 
                             <span id="card_title">
                                 {{ __('Quote') }}
@@ -35,19 +35,19 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             @foreach ($quotes as $quote)
-                                <div class="bg-image card shadow-1-strong"
+                                <div class="bg-image card shadow-1-strong " 
                                     style="background-image: url({{ $quote->img}}); 
                                         backdrop-filter: blur(0px);
                                         background-color: rgba(203,193,209,0.3);}">
-                                    <div class="card-body text-white">
+                                    <div class="card-body text-white " >
                                         <h5 class="card-title">{{ $quote->prhase }}</h5>
-                                        <p class="card-text">
+                                        <p class="card-text ">
                                             {{ $quote->author }}
                                         </p>
                                         <div>
                                                 <form action="....." method="POST">
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i
-                                                            class="fa fa-fw fa-trash"></i> Add Favorite</button>
+                                                    <button type="submit" class="btn btn-sm" style="background-color: rgba(90, 168, 151, 1);>
+                                                    <i class="fa fa-fw fa-trash"></i> Añadir a Favoritos</button>
                                                 </form>
                                             @role('admin')
                                                 <form action="{{ route('destroy', $quote->id) }}" method="POST">
