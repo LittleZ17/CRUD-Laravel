@@ -19,7 +19,7 @@
         <header style="background-color: rgba(90, 168, 151, 1);">
             <nav class="navbar navbar-expand-md navbar-light shadow-sm"  >
                 <div class="container"  >
-                    <a class="navbar-brand" href="{{ url('/') }}">FEMQUOTE
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="http://localhost:8888/crud-laravel/assets/logo.png" class="w-50" alt="">
                     </a> 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -71,9 +71,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-        
-        {{--  --}}
-        
     </div>
 </body>
 </html>
