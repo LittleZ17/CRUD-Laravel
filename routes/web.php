@@ -14,15 +14,17 @@ use App\Http\Controllers\QuoteController;
 
 Auth::routes();
 
-Route::get('/search', [SearchController::class, 'search'])->name('search');
+ Route::get('/search', [SearchController::class, 'search'])->name('search');
  Route::get('/quotes', [QuoteController::class , 'index'])->name('quotes');
  Route::get('/quotes/create', [QuoteController::class, 'create'])->name('create');
  Route::post('/quotes/store', [QuoteController::class, 'store'])->name('store');
  
- Route::get('/quotes/{id}', [QuoteController::class, 'show'])->name('show');
- Route::get('/quotes/{id}/edit', [QuoteController::class, 'edit'])->name('edit');
- Route::put('/quotes/{id}', [QuoteController::class, 'update'])->name('update');
- Route::delete('/quotes/{id}', [QuoteController::class, 'destroy'])->name('destroy');
+ Route::get('/quotes/{id}', [QuoteController::class, 'show'])->middleware(['auth', 'role:admin'])->name('show');
+ Route::get('/quotes/{id}/edit', [QuoteController::class, 'edit'])->middleware(['auth', 'role:admin'])->name('edit');
+ Route::put('/quotes/{id}', [QuoteController::class, 'update'])->middleware(['auth', 'role:admin'])->name('update');
+ Route::delete('/quotes/{id}', [QuoteController::class, 'destroy'])->middleware(['auth', 'role:admin'])->name('destroy');
+ Route::get('/quotes/favorite', [QuoteController::class, 'add-to-favorite'])->middleware(['auth', 'role:user'])->name('add-to-favorite');
+ 
 
 //Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
