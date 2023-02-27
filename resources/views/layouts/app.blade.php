@@ -22,11 +22,11 @@
 
     <div id="app">
         <header>
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color: rgba(90, 168, 151, 1);">
-                <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">QUOTES
+            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
+                <div class="container" style="background-color: rgba(90, 168, 151, 1);" >
+                    <a class="navbar-brand" href="{{ url('/') }}">FEMQUOTE
                         {{-- {{ config('app.name', 'Laravel') }} --}}
-                    </a>
+                    </a> 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -83,19 +83,10 @@
         
         <footer class="footer fixed-bottom">
             <div class="pt-3 pb-3 w-full text-center" style="background-color: rgba(90, 168, 151, 1);">
-                <img src="http://localhost:8888/crud-laravel/assets/quotelogo.png"  alt="" height="20px">  <span class="text-white">© 2023 Copyright </span>
+                  <span class="text-white">© Copyright Todos los derechos reservados 2023 || Privacy Policy</span>
             </div>
           </footer>
-        <!-- <footer>
-           <div class="flex justify-center bg-gray-800 h-18 pt-4 pb-4 fixed w-full" style="background-color: rgba(90, 168, 151, 1);">
-                 Copyright 
-                <div class="text-center" >
-                    <img src="http://localhost:8888/crud-laravel/assets/quotelogo.png"  alt="" height="20px">  
-                    © 2023 Copyright 
-                </div>-->
-                <!-- Copyright 
-            </div>
-          </footer>-->
+        
     </div>
 </body>
 </html>
