@@ -12,13 +12,14 @@
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://images.pexels.com/photos/5874593/pexels-photo-5874593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://images.pexels.com/photos/13371882/pexels-photo-13371882.jpeg?auto=compress&cs=tinysrgb&w=1600
+                        " class="d-block w-100" alt="...">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -53,11 +54,10 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-
                        
                     <div class="card-body">
-                        <div class="col-md-8"> 
                         <div class="table-responsive">
+                            <div class="col"> 
                             @foreach ($quotes as $quote)
                                 <div class="bg-image card shadow-1-strong " 
                                     style="background-image: url({{ $quote->img}}); 
