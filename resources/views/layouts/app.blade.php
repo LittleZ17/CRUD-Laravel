@@ -22,23 +22,20 @@
 
     <div id="app">
         <header>
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="background-color: rgba(90, 168, 151, 1);">
+            <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: rgba(90, 168, 151, 1);">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">QUOTES
-                        {{-- {{ config('app.name', 'Laravel') }} --}}
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
 
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ms-auto">
                             <!-- Authentication Links -->
                             @guest
                                 @if (Route::has('login'))
@@ -82,7 +79,7 @@
         </main>
         
         <footer class="footer fixed-bottom">
-            <div class="pt-3 pb-3 w-full text-center" style="background-color: rgba(90, 168, 151, 1);">
+            <div class="pt-3 pb-3 w-full text-center" style="background-color: rgba(90, 168, 151, 1)">
                 <img src="http://localhost:8888/crud-laravel/assets/quotelogo.png"  alt="" height="20px">  <span class="text-white">© 2023 Copyright </span>
             </div>
           </footer>

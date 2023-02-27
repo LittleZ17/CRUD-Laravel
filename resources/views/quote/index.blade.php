@@ -17,12 +17,12 @@
                                 {{ __('Quote') }}
                             </span>
                             @role('admin')
-                            <div class="float-right">
-                                <a href="{{ route('quotes.create') }}" class="btn btn-primary btn-sm float-right"
-                                    data-placement="left">
-                                    {{ __('Create New') }}
-                                </a>
-                            </div>
+                                <div class="float-right">
+                                    <a href="{{ route('quotes.create') }}" class="btn btn-primary btn-sm float-right"
+                                        data-placement="left">
+                                        {{ __('Create New') }}
+                                    </a>
+                                </div>
                             @endrole
                         </div>
                     </div>
@@ -35,20 +35,23 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             @foreach ($quotes as $quote)
-                                <div class="bg-image card shadow-1-strong " 
-                                    style="background-image: url({{ $quote->img}}); 
+                                <div class="bg-image card shadow-1-strong "
+                                    style="background-image: url({{ $quote->img }}); 
                                         backdrop-filter: blur(0px);
                                         background-color: rgba(203,193,209,0.3);}">
-                                    <div class="card-body text-white " >
+                                    <div class="card-body text-white ">
                                         <h5 class="card-title">{{ $quote->prhase }}</h5>
                                         <p class="card-text ">
                                             {{ $quote->author }}
                                         </p>
                                         <div>
+                                            @role('register')
                                                 <form action="....." method="POST">
-                                                    <button type="submit" class="btn btn-sm" style="background-color: rgba(90, 168, 151, 1);>
-                                                    <i class="fa fa-fw fa-trash"></i> Añadir a Favoritos</button>
+                                                    <button type="submit" class="btn btn-sm"
+                                                        style="background-color: rgba(90, 168, 151, 1)";>
+                                                        <i class="fa fa-fw fa-trash"></i> Añadir a Favoritos</button>
                                                 </form>
+                                            @endrole
                                             @role('admin')
                                                 <form action="{{ route('quotes.destroy', $quote->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary "
@@ -57,15 +60,13 @@
                                                     <a class="btn btn-sm btn-success"
                                                         href="{{ route('quotes.edit', $quote->id) }}"><i
                                                             class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i
                                                             class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             @endrole
                                         </div>
                                     </div>
-                                </div>    
+                                </div>
                             @endforeach
                         </div>
                     </div>
