@@ -7,22 +7,21 @@
 @section('content')
     <div class="container-fluid">
 
-        <div class="col-sm-12">
-            {{-- SLIDER VA AQUI!! --}}
-            <div id="carouselExample" class="carousel slide">
+        <div class="col-sm-12 row justify-content-md-center">
+            <div id="carouselExample" class="carousel slide w-50 mb-5 ">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active ">
                         <img src="https://images.pexels.com/photos/5874593/pexels-photo-5874593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            class="d-block w-100" style="height: 300px" alt="...">
+                            class="d-block w-100 rounded" style="height: 400px" alt="carrousel image 1">
                     </div>
                     <div class="carousel-item">
                         <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            class="d-block w-100" style="height: 300px"" alt="...">
+                            class="d-block w-100 rounded" style="height: 400px" alt="carrousel image 2">
                     </div>
                     <div class="carousel-item">
                         <img src="https://images.pexels.com/photos/13371882/pexels-photo-13371882.jpeg?auto=compress&cs=tinysrgb&w=1600
                         "
-                            class="d-block w-100" alt="...">
+                            class="d-block w-100 rounded" style="height: 00px" alt="carrousel image 3">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -35,34 +34,23 @@
                 </button>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin:10px">
-
-                        <span id="card_title">
-                            {{ __('Quote') }}
-                        </span>
+            <div class="card w-75">
+                <div class="card-header bg-white border-0">
                         @role('admin')
-                            <div class="float-right">
-                                <a href="{{ route('quotes.create') }}" class="btn btn-primary btn-sm float-right"
+                            <div class="d-flex flex-row-reverse">
+                                <a href="{{ route('quotes.create') }}" class="btn btn-primary btn-lg"
                                     data-placement="left">
                                     {{ __('Create New') }}
                                 </a>
                             </div>
                         @endrole
-                    </div>
                 </div>
-                @if ($message = Session::get('success'))
-                    <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                    </div>
-                @endif
 
                 <div class="card-body">
                     <div class="table-responsive">
                         <div class="col">
                             @foreach ($quotes as $quote)
-                                <div class="bg-image card shadow-1-strong "
+                                <div class="bg-image card shadow-1-strong mb-5 "
                                     style="background-image: url({{ $quote->img }}); 
                                         backdrop-filter: blur(0px);
                                         background-color: rgba(203,193,209,0.3);}">
