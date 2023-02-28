@@ -49,7 +49,7 @@
                     <div class="table-responsive">
                         <div class="col">
                             @foreach ($quotes as $quote)
-                                <div class="bg-image card shadow-1-strong mb-5 "
+                                <div class="bg-image card shadow-1-strong mb-5"
                                     style="background-image: url({{ $quote->img }});">
                                     <div class="card-body text-white ">
                                         <h5 class="card-title">{{ $quote->prhase }}</h5>
@@ -91,4 +91,4 @@
     <div class="pt-3 pb-3 w-full text-center" style="background-color: rgba(90, 168, 151, 1);">
           <span class="text-white">© Copyright Todos los derechos reservados 2023 || Privacy Policy</span>
     </div>
-  </footer>
+</footer>
