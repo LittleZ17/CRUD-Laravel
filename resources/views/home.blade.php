@@ -8,7 +8,7 @@
          <h2 class= "text-center my-4 px-3 font-italic" ><em>¡Hola! Somos la primera comunidad fem con frases de empoderamiento</em></h2>
        
         <span class="h4" style="color:orange;">1</span>
-            <a class="text-decoration-none text-reset h5" href="/quotes">Buscar una frase motivadora en nuestro buscador</a>
+            <a class="text-decoration-none text-reset h5" href="/quotes">Busca tus frases motivadoras</a>
 
         <span class="h4" style="color:orange;">2</span>
             <a class="text-decoration-none text-reset h5" href="/login">Únete a nuestra comunidad </a>
