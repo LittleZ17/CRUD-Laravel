@@ -3,10 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="w-25">
+            <img src="http://localhost:8888/crud-laravel/assets/logo.png" class="w-100" alt="logo FemQuotes">
+        </div>
+        <h5 class="text-center mb-5">Para añadir tus favoritos debes registrarte</h5>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -39,29 +41,12 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{-- {{ __('Login') }} --}}
+                                <button type="submit" style="background-color:#F8A488; border:0;" class="btn btn-primary w-75 h-100">
+                                    Acceder
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>

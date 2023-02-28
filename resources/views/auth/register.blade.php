@@ -3,6 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="w-25">
+            <img src="http://localhost:8888/crud-laravel/assets/logo.png" class="w-100" alt="logo FemQuotes">
+        </div>
+        <h5 class="text-center mb-5">Para añadir tus favoritos debes registrarte</h5>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -63,8 +67,8 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                <button type="submit" style="background-color:rgb(248, 164, 136); border:0;" class="btn btn-primary w-100 h-100">
+                                    Registrar
                                 </button>
                             </div>
                         </div>
