@@ -52,12 +52,11 @@ NodeJS.
 
 ## [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)   
 
-- 
 - [@Maricarmen](https://github.com/marchuovi)
 - [@Bianca](https://github.com/bgiudicid)  
 - [@Zindy](https://github.com/LittleZ17)
 - [@Liliana](https://github.com/LilianaDal)
-- [Shima](https://github.com/Archima20)
+- [@Shima](https://github.com/Archima20)
 
 ## :blue_book:Acknowledgements
 
