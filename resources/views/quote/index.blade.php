@@ -50,9 +50,7 @@
                         <div class="col">
                             @foreach ($quotes as $quote)
                                 <div class="bg-image card shadow-1-strong mb-5 "
-                                    style="background-image: url({{ $quote->img }}); 
-                                        backdrop-filter: blur(px);
-                                        background-color: rgba(203,193,209,0.5)}">
+                                    style="background-image: url({{ $quote->img }});">
                                     <div class="card-body text-white ">
                                         <h5 class="card-title">{{ $quote->prhase }}</h5>
                                         <p class="card-text font-italic ">

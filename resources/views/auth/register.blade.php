@@ -67,7 +67,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" style="background-color:#F8A488; border:0;" class="btn btn-primary w-100 h-100">
+                                <button type="submit" style="background-color:rgb(248, 164, 136); border:0;" class="btn btn-primary w-100 h-100">
                                     Registrar
                                 </button>
                             </div>
